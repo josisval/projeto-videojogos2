@@ -1,0 +1,39 @@
+1 - 
+CREATE DATABASE sistema-jogos;
+
+//
+
+2 - CRIAÇÃO DA TABEL USUARIOS
+
+CREATE TABLE Usuarios (
+    ID INT PRIMARY KEY IDENTITY(1,1), -- Um ID único para cada usuário
+    NomeUsuario VARCHAR(50) NOT NULL, -- Nome de usuário (não pode ser nulo)
+    Senha VARCHAR(100) NOT NULL -- Senha (não pode ser nula)
+);
+
+3 - CRIAÇÃO DA TABEL ESTOQUE
+
+CREATE TABLE [dbo].[Estoque] (
+    [ID]                   INT             IDENTITY (1, 1) NOT NULL,
+    [NomeJogo]             NVARCHAR (255)  NULL,
+    [Categoria]            NVARCHAR (100)  NULL,
+    [Preco]                DECIMAL (10, 2) NULL,
+    [QuantidadeDisponivel] INT             NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+//FORMATADO DIFERENTE, TIVE QUE FAZER UMAS ALTERAÇÕES, MAS FUNCIONA!
+
+4 - CRIAÇÃO DA TABEL PEDIDOS
+
+CREATE TABLE Pedidos (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Data DATE,
+    Estado VARCHAR(255),
+    Produto VARCHAR(255),
+    Quantidade INT,
+    ValorUnitario DECIMAL(10, 2),
+    NomeComprador VARCHAR(255),
+    FormadePagamento VARCHAR(255),
+    ValorTotal DECIMAL(10, 2)
+);
